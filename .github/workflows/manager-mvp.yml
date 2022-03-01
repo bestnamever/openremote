@@ -17,7 +17,7 @@ jobs:
     needs: [build]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: set up QEMU
         uses: docker/setup-qemu-action@v1
         with:
@@ -45,7 +45,7 @@ jobs:
     needs: [build]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: set up QEMU
         uses: docker/setup-qemu-action@v1
         with:
@@ -73,7 +73,7 @@ jobs:
     needs: [image_deployment, image_manager]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: set up QEMU
         uses: docker/setup-qemu-action@v1
         with:
@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: n1hility/cancel-previous-runs@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
